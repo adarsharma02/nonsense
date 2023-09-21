@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1></h1>
-    <button onclick="decrease()">dec</button>
+    <button onclick="decrease()" style="background-color: red">dec</button>
     <button onclick="reset()">reset</button>
-    <button onclick="increase()">inc</button>
-
-
+    <button onclick="increase()" style="background-color: green">inc</button>
 
     <script>
-        let heading = document.getElementsByTagName('h1')[0]
-        let but1 = document.getElementsByTagName('button')[0]
-        let but2 = document.getElementsByTagName('button')[1]
-        let but3 = document.getElementsByTagName('button')[2]
-        let val = 0
-        heading.innerText = val
-           
-        const increase = ()=>{
-            heading.innerText = ++val
+      let heading = document.getElementsByTagName("h1")[0];
+      let but1 = document.getElementsByTagName("button")[0];
+      let but2 = document.getElementsByTagName("button")[1];
+      let but3 = document.getElementsByTagName("button")[2];
+      var val = 0;
+      heading.innerText = 0;
 
-        }
-        const decrease = ()=>{
-            heading.innerText = --val
-        }
-        const reset = ()=>{
-            heading.innerText = 0
-        }
+      const increase = () => {
+        val++;
+        heading.innerText = val;
 
-
+        if (val == 0) {
+          heading.style.color = "black";
+          console.log("hello");
+        }
+        if (val < 0) {
+          heading.style.color = "red";
+        }
+        if (val > 0) {
+          heading.style.color = "green";
+        }
+      };
+      const decrease = () => {
+        --val;
+        heading.innerText = val;
+        if (val == 0) {
+          heading.style.color = "black";
+          console.log("hello");
+        }
+        if (val < 0) {
+          heading.style.color = "red";
+        }
+        if (val > 0) {
+          heading.style.color = "green";
+        }
+      };
+      const reset = () => {
+        heading.innerText = 0;
+        if (val == 0) {
+          heading.style.color = "black";
+          console.log("hello");
+        }
+        if (val < 0) {
+          heading.style.color = "red";
+        }
+        if (val > 0) {
+          heading.style.color = "green";
+        }
+      };
     </script>
-</body>
+  </body>
 </html>
